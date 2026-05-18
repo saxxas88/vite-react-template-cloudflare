@@ -6,10 +6,16 @@
 }
 
 .logo {
-	height: 6em;
-	padding: 1.5em;
+
+	padding: 10px 20px;
 	will-change: filter;
 	transition: filter 300ms;
+}
+.logo.a {
+	height: 80px;
+}
+.logo.b {
+	height: 100px;
 }
 .logo:hover {
 	filter: drop-shadow(0 0 2em #646cffaa);
@@ -18,6 +24,16 @@
 	filter: drop-shadow(0 0 2em #61dafbaa);
 }
 .logo.cloudflare:hover {
+	filter: drop-shadow(0 0 2em #f6821faa);
+}
+
+.logo.hover {
+	filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react.hover {
+	filter: drop-shadow(0 0 2em #61dafbaa);
+}
+.logo.cloudflare.hover {
 	filter: drop-shadow(0 0 2em #f6821faa);
 }
 
@@ -30,10 +46,12 @@
 	}
 }
 
+
 @media (prefers-reduced-motion: no-preference) {
-	a:nth-of-type(2) .logo {
+	img:nth-of-type(2).logo {
 		animation: logo-spin infinite 20s linear;
 	}
+
 }
 
 .card {
@@ -42,4 +60,48 @@
 
 .read-the-docs {
 	color: #888;
+}
+.container{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.container-logo{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: nowrap;
+}
+
+.toast {
+	position: fixed;
+	left: 50%;
+	top: 50vh;
+	animation: toast-in normal 2s ease-in-out;
+	padding: 10px 20px;
+	border-radius: 8px;
+	border: 1px solid #ffffff;
+	background-color: #70023f;
+	opacity: 1;
+}
+
+@keyframes toast-in {
+	0% {
+		transform: translate(-50%,50vh);
+		opacity: 0;
+	}
+	20% {
+		transform: translate(-50%,0vh);
+		opacity: 1;
+	}
+	80% {
+		transform: translate(-50%,0vh);
+		opacity: 1;
+	}
+	100% {
+		transform: translate(-50%,0vh);
+		opacity: 0;
+	}
 }
