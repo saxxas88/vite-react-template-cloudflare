@@ -11,7 +11,7 @@ import Toast from './components/Toast';
 function App() {
 	const [stateAnimation,setStateAnimation] = useState(0)
 	const [name, setName] = useState('');
-    let interval = 0;
+    let interval:any = 0;
 
 	const animationLed = async()=>{
 		try{
@@ -79,7 +79,7 @@ function App() {
 						fetch("/api/")
 							.then((res) => res.json() as Promise<{ value: string }>)
 							.then((data) => setName(data?.value))
-							.catch(err=>setName('Somenthing went wrong!'));
+							.catch(()=>setName('Somenthing went wrong!'));
 					}}
 					aria-label="get name"
 				>
