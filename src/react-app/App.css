@@ -1,117 +1,112 @@
 #root {
-	max-width: 100%;
-	margin: 0 auto;
-	padding: 2rem;
-	text-align: center;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
 }
 
-@media only screen and (min-width:1300px){
-	#root {
-	max-width: 1280px;
-	
-}
+@media only screen and (min-width: 1300px) {
+  #root {
+    max-width: 1280px;
+  }
 }
 
 .logo {
-
-	padding: 10px 20px;
-	will-change: filter;
-	transition: filter 300ms;
+  padding: 10px 20px;
+  will-change: filter;
+  transition: filter 300ms;
 }
 .logo.a {
-	width: 100%;
-	height: 80px;
+  width: 100%;
+  height: 80px;
 }
 .logo.b {
-	height: 100px;
+  height: 100px;
 }
 .logo:hover {
-	filter: drop-shadow(0 0 2em #646cffaa);
+  filter: drop-shadow(0 0 2em #646cffaa);
 }
 .logo.react:hover {
-	filter: drop-shadow(0 0 2em #61dafbaa);
+  filter: drop-shadow(0 0 2em #61dafbaa);
 }
 .logo.cloudflare:hover {
-	filter: drop-shadow(0 0 2em #f6821faa);
+  filter: drop-shadow(0 0 2em #f6821faa);
 }
 
 .logo.hover {
-	filter: drop-shadow(0 0 2em #646cffaa);
+  filter: drop-shadow(0 0 2em #646cffaa);
 }
 .logo.react.hover {
-	filter: drop-shadow(0 0 2em #61dafbaa);
+  filter: drop-shadow(0 0 2em #61dafbaa);
 }
 .logo.cloudflare.hover {
-	filter: drop-shadow(0 0 2em #f6821faa);
+  filter: drop-shadow(0 0 2em #f6821faa);
 }
 
 @keyframes logo-spin {
-	from {
-		transform: rotate(0deg);
-	}
-	to {
-		transform: rotate(360deg);
-	}
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
-
 @media (prefers-reduced-motion: no-preference) {
-	img:nth-of-type(2).logo {
-		animation: logo-spin infinite 20s linear;
-	}
-
+  img:nth-of-type(2).logo {
+    animation: logo-spin infinite 20s linear;
+  }
 }
 
 .card {
-	padding: 1em;
+  padding: 1em;
 }
 
 .read-the-docs {
-	color: #888;
+  color: #888;
 }
-.container{
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-.container-logo{
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: center;
-	flex-wrap: nowrap;
+.container-logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
 }
 
 .toast_tmp {
-	position: fixed;
-	left: 50%;
-	top: 50vh;
-	animation: toast-in normal 2s ease-in-out;
-	padding: 10px 20px;
-	border-radius: 8px;
-	border: 1px solid #ffffff;
-	background-color: #70023f;
-	opacity: 1;
-	font-size: 1.6rem;
+  position: fixed;
+  left: 50%;
+  top: 50vh;
+  animation: toast-in normal 2s ease-in-out;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: 1px solid #ffffff;
+  background-color: #70023f;
+  opacity: 1;
+  font-size: 1.6rem;
 }
 
-
 @keyframes toast-in {
-	0% {
-		transform: translate(-50%,50vh);
-		opacity: 0;
-	}
-	20% {
-		transform: translate(-50%,0vh);
-		opacity: 1;
-	}
-	80% {
-		transform: translate(-50%,0vh);
-		opacity: 1;
-	}
-	100% {
-		transform: translate(-50%,0vh);
-		opacity: 0;
-	}
+  0% {
+    transform: translate(-50%, 50vh);
+    opacity: 0;
+  }
+  20% {
+    transform: translate(-50%, 0vh);
+    opacity: 1;
+  }
+  80% {
+    transform: translate(-50%, 0vh);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, 0vh);
+    opacity: 0;
+  }
 }

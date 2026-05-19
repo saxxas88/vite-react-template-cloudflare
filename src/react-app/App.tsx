@@ -10,10 +10,11 @@ import Toast from "./components/Toast";
 
 import AvatarDoubleHover from "./components/Avatar";
 
+let interval: number = 0;
+
 function App() {
   const [stateAnimation, setStateAnimation] = useState(0);
   const [name, setName] = useState("");
-  let interval: any = 0;
 
   const animationLed = async () => {
     try {
@@ -21,13 +22,15 @@ function App() {
         ".container .container-logo .logo",
       );
       const arr = logos ? Array.from(logos) : [];
-      for (let x of arr) {
+      for (const x of arr) {
         x.classList.add("hover");
         await new Promise((res) => setTimeout(res, 500, true));
         x.classList.remove("hover");
       }
-    } catch (err: any) {
-      console.log(err.message);
+    } catch (error) {
+      let message = "Unknown Error";
+      if (error instanceof Error) message = error.message;
+      console.log(message);
     }
   };
 
@@ -37,19 +40,20 @@ function App() {
   };
 
   useEffect(() => {
-    stateAnimation % 2 == 0 ? clearInterval(interval) : animationLedStartStop();
+    if (stateAnimation % 2 == 0) clearInterval(interval);
+    else animationLedStartStop();
     return () => {
       return clearInterval(interval);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [stateAnimation]);
 
   return (
     <>
-	   <div className="container relative">
-		<AvatarDoubleHover />
-	   </div>
+      <div className="relative container">
+        <AvatarDoubleHover />
+      </div>
       <div className="container">
-   
         <div className="container-logo">
           {/* <a href="https://vite.dev" target="_blank"> */}
           <img src={viteLogo} className="logo a vite" alt="Vite logo" />
@@ -72,7 +76,7 @@ function App() {
       <h2>Vite + React + Hono + Cloudflare</h2>
       <div className="mt-8">
         <button
-		className="btn"
+          className="btn"
           onClick={() => {
             setStateAnimation((val) => val + 1);
           }}
@@ -117,7 +121,7 @@ function App() {
       </div>
       <div className="mt-8">
         <button
-		className="btn"
+          className="btn"
           onClick={() => {
             fetch("/api/")
               .then((res) => res.json() as Promise<{ value: string }>)

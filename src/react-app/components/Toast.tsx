@@ -1,18 +1,19 @@
-import { useEffect } from "react"
+import { useEffect } from "react";
 
-const Toast = ({text,setText}:{text:String,setText:Function})=>{
+const Toast = ({
+  text,
+  setText,
+}: {
+  text: string;
+  setText(text: string): void;
+}) => {
+  useEffect(() => {
+    console.log("xxxx");
+    if (text && text?.trim() != "") setTimeout(() => setText(""), 2000);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [text]);
 
-    useEffect(()=>{
-        if(text && text?.trim()!='') setTimeout(()=>setText(''),2000)
-    },[text])
+  return <>{text && <h2 className="toast_tmp">{text}</h2>}</>;
+};
 
-    return (
-        <>
-        {text &&
-            <h2 className="toast_tmp">{text}</h2>
-        }
-        </>
-    )
-}
-
-export default Toast
+export default Toast;

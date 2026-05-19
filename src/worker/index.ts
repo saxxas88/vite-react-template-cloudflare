@@ -1,15 +1,15 @@
 import { Hono } from "hono";
 
 type Env = {
-    username:string
-}
+  username: string;
+};
 const app = new Hono<{ Bindings: Env }>();
 
 app.get("/api/", (c) => {
-    let envVar=c.env.username ||'#';
-    const name = "Cloudflare";
-    console.log({name,envVar})
-    return c.json({ value: ` ${name} + ${envVar}` })
+  const envVar = c.env.username || "#";
+  const name = "Cloudflare";
+  console.log({ name, envVar });
+  return c.json({ value: ` ${name} + ${envVar}` });
 });
 
 export default app;
