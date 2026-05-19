@@ -9,7 +9,7 @@ const Toast = ({text,setText}:{text:String,setText:Function})=>{
     return (
         <>
         {text &&
-            <h2 className="toast">{text}</h2>
+            <h2 className="toast_tmp">{text}</h2>
         }
         </>
     )

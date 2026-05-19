@@ -1,8 +1,15 @@
 #root {
-	max-width: 1280px;
+	max-width: 100%;
 	margin: 0 auto;
 	padding: 2rem;
 	text-align: center;
+}
+
+@media only screen and (min-width:1300px){
+	#root {
+	max-width: 1280px;
+	
+}
 }
 
 .logo {
@@ -12,6 +19,7 @@
 	transition: filter 300ms;
 }
 .logo.a {
+	width: 100%;
 	height: 80px;
 }
 .logo.b {
@@ -55,7 +63,7 @@
 }
 
 .card {
-	padding: 2em;
+	padding: 1em;
 }
 
 .read-the-docs {
@@ -75,7 +83,7 @@
 	flex-wrap: nowrap;
 }
 
-.toast {
+.toast_tmp {
 	position: fixed;
 	left: 50%;
 	top: 50vh;
@@ -85,7 +93,9 @@
 	border: 1px solid #ffffff;
 	background-color: #70023f;
 	opacity: 1;
+	font-size: 1.6rem;
 }
+
 
 @keyframes toast-in {
 	0% {
