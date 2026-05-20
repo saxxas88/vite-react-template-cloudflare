@@ -1,0 +1,121 @@
+.logo {
+  padding: 10px 20px;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo.a {
+  width: 100%;
+  height: 80px;
+}
+.logo.b {
+  height: 100px;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+.logo.hono:hover {
+  filter: drop-shadow(0 0 2em #f05b06aa);
+}
+.logo.cloudflare:hover {
+  filter: drop-shadow(0 0 2em #f6821faa);
+}
+
+.logo.vite {
+  animation: logo-led-vite infinite 1s ease-in-out;
+}
+.logo.react {
+  animation:
+    logo-led-react infinite 1s ease-in-out,
+    logo-spin infinite 20s linear;
+}
+.logo.hono {
+  animation: logo-led-hono infinite 1s ease-in-out;
+}
+.logo.cloudflare {
+  animation: logo-led-cloudflare infinite 1s ease-in-out;
+}
+
+@keyframes logo-led-vite {
+  0% {
+    filter: drop-shadow(0 0 2em #646cffce);
+  }
+  25% {
+    filter: none;
+  }
+  50% {
+    filter: none;
+  }
+  75% {
+    filter: none;
+  }
+  85% {
+    filter: drop-shadow(0 0 2em #646cffce);
+  }
+  100% {
+    filter: drop-shadow(0 0 2em #646cffce);
+  }
+}
+
+@keyframes logo-led-react {
+  0% {
+    filter: none;
+  }
+  25% {
+    filter: drop-shadow(0 0 2em #61dafbda);
+  }
+  50% {
+    filter: none;
+  }
+  75% {
+    filter: none;
+  }
+  100% {
+    filter: none;
+  }
+}
+
+@keyframes logo-led-hono {
+  0% {
+    filter: none;
+  }
+  25% {
+    filter: none;
+  }
+  50% {
+    filter: drop-shadow(0 0 2em #f05c06e1);
+  }
+  75% {
+    filter: none;
+  }
+  100% {
+    filter: none;
+  }
+}
+@keyframes logo-led-cloudflare {
+  0% {
+    filter: none;
+  }
+  25% {
+    filter: none;
+  }
+  50% {
+    filter: none;
+  }
+  75% {
+    filter: drop-shadow(0 0 2em #f6831fda);
+  }
+  100% {
+    filter: none;
+  }
+}
+
+@keyframes logo-spin {
+  from {
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

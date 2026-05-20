@@ -8,7 +8,6 @@ const Toast = ({
   setText(text: string): void;
 }) => {
   useEffect(() => {
-    console.log("xxxx");
     if (text && text?.trim() != "") setTimeout(() => setText(""), 2000);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [text]);
