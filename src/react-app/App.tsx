@@ -7,7 +7,8 @@ import "./style/App.css";
 import Toast from "./components/Toast";
 import HeroForm from "./components/HeroForm";
 import LogoLed from "./components/LogoLed";
-import CookiesCard from "./components/CookiesCard";
+import InfoCard from "./components/InfoCard";
+import { Handshake, HeartPulse, Plus, Server, Smile } from "lucide-react";
 
 function App() {
   const [name, setName] = useState("");
@@ -17,24 +18,48 @@ function App() {
       <div className="app-container mx-auto my-0 flex min-h-screen flex-col items-center justify-start bg-gray-800 px-8 py-20">
         <HeroForm />
         <LogoLed />
-        <CookiesCard />
-        <div className="mt-8 flex flex-col items-center">
+        <div className="mx-auto flex w-full flex-col flex-wrap items-center justify-center gap-6 lg:flex-row">
+          <InfoCard />
+          <InfoCard />
+          <InfoCard />
+        </div>
+        <div className="mt-8 flex flex-col items-center gap-y-2">
           <button
             className="btn"
             onClick={() => {
-              fetch("/api/")
-                .then((res) => res.json() as Promise<{ value: string }>)
-                .then((data) => setName(data?.value))
+              fetch("/api/hello")
+                .then(
+                  (res) =>
+                    res.json() as Promise<{ status: string; message: string }>,
+                )
+                .then((data) => setName(data?.message || data?.status))
                 .catch(() => setName("Somenthing went wrong!"));
             }}
-            aria-label="get name"
+            aria-label="greeting"
           >
-            {`Name + EnvVariables from API `}
+            <Handshake />
+
+            <Smile />
+          </button>
+          <button
+            className="btn"
+            onClick={() => {
+              fetch("/api/healt")
+                .then((res) => res.json())
+                .then((data) => setName(data?.status || data))
+                .catch((err) => {
+                  console.log(err);
+                  setName("Somenthing went wrong!");
+                });
+            }}
+            aria-label="check server status"
+          >
+            <Server />
+            <Plus />
+
+            <HeartPulse />
           </button>
           <Toast text={name} setText={setName} />
-          <p className="mt-2 text-neutral-100">
-            Edit <code>worker/index.ts</code> to change the value
-          </p>
         </div>
 
         {/* <p className="read-the-docs">Click on the logos to learn more</p> */}

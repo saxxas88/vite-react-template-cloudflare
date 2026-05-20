@@ -16,6 +16,7 @@
     "@tailwindcss/vite": "^4.3.0",
     "daisyui": "^5.5.20",
     "hono": "4.11.1",
+    "jose": "^6.2.3",
     "lucide-react": "^1.16.0",
     "react": "19.2.1",
     "react-dom": "19.2.1",
@@ -43,7 +44,7 @@
   "scripts": {
     "build": "tsc -b && vite build",
     "cf-typegen": "wrangler types",
-    "check": "tsc && vite build && wrangler deploy --dry-run",
+    "check": "tsc && vite build && wrangler deploy --env production --dry-run",
     "deploy": "wrangler deploy",
     "dev": "vite",
     "lint": "eslint .",

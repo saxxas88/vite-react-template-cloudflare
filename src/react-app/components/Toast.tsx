@@ -12,7 +12,7 @@ const Toast = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [text]);
 
-  return <>{text && <h2 className="toast_tmp">{text}</h2>}</>;
+  return <>{text && <h2 className="toast_tmp text-neutral-100">{text}</h2>}</>;
 };
 
 export default Toast;
