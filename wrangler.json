@@ -17,8 +17,12 @@
     "production": {
       "vars": {
         "ENVIRONMENT": "production",
-        "TOKEN": "tk_0123456789"
+        "TOKEN": "tk_0123456789",
+        "APP_NAME": "Decidueye/DaisyUI"
       }
     }
+  },
+  "vars": {
+    "APP_NAME": "Decidueye/DaisyUI"
   }
 }
