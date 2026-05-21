@@ -5,24 +5,35 @@
   "compatibility_date": "2025-10-08",
   "compatibility_flags": ["nodejs_compat"],
   "observability": {
-    "enabled": true
+    "enabled": true,
   },
   "upload_source_maps": true,
   "assets": {
     "directory": "./dist/client",
     "not_found_handling": "single-page-application",
-    "binding": "ASSETS"
+    "binding": "ASSETS",
   },
   "env": {
     "production": {
       "vars": {
         "ENVIRONMENT": "production",
         "TOKEN": "tk_0123456789",
-        "APP_NAME": "Decidueye/DaisyUI"
-      }
-    }
+        "APP_NAME": "Decidueye/DaisyUI",
+      },
+    },
+    "staging": {
+      "vars": {
+        "ENVIRONMENT": "production",
+        "TOKEN": "tk_0123456789",
+        "APP_NAME": "Decidueye/DaisyUI",
+      },
+      "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "decidueye-staging-d1",
+          "database_id": "feb47027-22e6-4f6b-96e7-5b9b0805798e",
+        },
+      ],
+    },
   },
-  "vars": {
-    "APP_NAME": "Decidueye/DaisyUI"
-  }
 }
